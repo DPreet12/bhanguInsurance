@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+   
+    <header class="header">
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/supervisa">Supervisa Insurance</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Life Insurance</a>
+                <div class="dropdown-content">
+                    <a href="/lifeInsurance#critical-insurance">Critical Illness-Insurance</a>
+                    <a href="/lifeInsurance">Travel Insurance</a>
+                    
+                </div>
+            </div>
+            <!-- <a href="/about">About</a> -->
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>We are here to help</h3>
+            <h1>Get in Touch with Us</h1>
+            <h3>Your inquiries are<span class="multiple-text">important to us</span></h3>
+            <p>If you have any questions or need assistance, we're here for you. Feel free to reach out, and we will get back to you as soon as possible with the best possible solution for your needs.</p>
+        </div>
+        <div class="home-img">
+            <img src="/images/image-3.jpg" alt="Image" >
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span class="multiple-text">Us</span></h2>
+        <p>We would love to hear from you! Please fill out the form below and we will get back to you as soon as possible.</p>
+        <form action="/contact" method="POST">
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" class="item" placeholder="First Name">
+                    <div class="error-txt">First Name can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" class="item" placeholder="lastName">
+                    <div class="error-txt">Last Name can't be blank</div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" class="item" placeholder="Email">
+                    <div class="error-txt">Email can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="phone">Phone:</label>
+                  <input type="number" name="phone" class="item" id="phone" placeholder="phone">  
+                  <div class="error-txt">Phone can't be blank</div>
+                </div>
+            </div>
+
+            
+            <div class="textarea field ">
+                <label for="message" id="label-message">Message:</label>
+                <textarea name="message" id="message"  cols="30" rows="10" class="item" required></textarea>
+                <div class="error-txt">Message can't be blank</div>
+            </div>
+              <input type="submit" value="Get Quote" class="btn">
+        </form>
+    </section>
+    
+   
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Dharampreet Singh Sandhu | All Rights Reserved</p></p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+        </div>
+    </footer>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+ 
+        document.querySelectorAll('.item').forEach(input => {
+           input.addEventListener('blur', function() {
+               const errorTxt = this.nextElementSibling; 
+               if (this.value.trim() === '') {
+                   errorTxt.style.display = 'block';  
+               } else {
+                   errorTxt.style.display = 'none';  
+               }
+           });
+       });
+         
+       
+       </script>
+    <% if(message) { %>
+        <script>
+            Swal.fire({
+                title: "Message",
+                text: "<%=message %>",
+                icon: "success",
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton:'custom-confirm-button',
+                    
+                }
+            })
+        </script>
+        <% } %>
+</body>
+</html>

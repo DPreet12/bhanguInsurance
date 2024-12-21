@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhangu Insurance</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="/css/lifeinsurance.css">
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/supervisa">Supervisa Insurance</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Life Insurance</a>
+                <div class="dropdown-content">
+                    <a href="/lifeInsurance#critical-insurance">Critical Illness-Insurance</a>
+                    <a href="/lifeInsurance">Travel Insurance</a>
+                    
+                </div>
+            </div>
+            
+            <!-- <a href="/about">About</a> -->
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Secure Your Future</h3>
+            <h1>Life Insurance Made Simple</h1>
+            <h3>Protect What <span class="multiple-text">Matters Most</span></h3>
+            <p>Life is unpredictable, but your financial security doesn't have to be. With the right life insurance plan, you can ensure peace of mind for yourself and your loved ones. Whether you're starting a family, building your career, or preparing for retirement, a life insurance policy can protect your family's future by providing financial support in case of the unexpected. Choose a plan that fits your needs, whether it's term life, whole life, or universal life insurance, and safeguard your future.
+            </p>
+        </div>
+        <div class="home-img">
+            <img src="/images/image-1.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="critical-insurance" id="critical-insurance">
+        <div class="critical-img">
+            <img src="/images/image-1.jpg" alt="">
+        </div>
+        <div class="critical-content">
+            <h3>Critical Illness Coverage</h3>
+            <h1>Your Safety Net in Tough Times</h1>
+            <h3>Stay Prepared for <span class="multiple-text">Life's Challenges</span> </h3>
+            <p>Critical illness insurance provides financial support when you need it the most. Whether it's a major health setback like cancer, heart disease, or a stroke, or the high costs of emergency medical treatments, this coverage ensures that you can focus on your recovery instead of financial stress. With critical illness insurance, you're better prepared for life's challenges, giving you the confidence to take on the unexpected without worrying about the financial burden.</p>
+        </div>
+        
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2 class="heading">Get in <span class="multiple-text">Touch</span></h2>
+        <p>Contact us today to learn more about our different types of Life Insurance's plans and how they can meet your specific requirements</p>
+        <form action="/lifeInsurance" method="POST">
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" class="item" placeholder="Full Name">
+                    <div class="error-txt">Full name can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="item" id="email" placeholder="email">
+                    <div class="error-txt">Email can't be blank</div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="phone">Phone:</label>
+                  <input type="number" name="phone" class="item" id="phone" placeholder="phone">  
+                  <div class="error-txt">Phone can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="dateOfBirth">Date of birth:</label>
+                    <input type="date" name="dateOfBirth" id="date" class="item" placeholder="dateOfBirth">
+                    <div class="error-txt">Date of birth can't be blank</div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="annualIncome">Annual Income:</label>
+                    <input type="Number" name="annualIncome" id="annualIncome" class="item">
+                </div>
+                <div class="input-field field">
+                    <label for="smokingStatus">Are you a Smoker?</label>
+                    <select name="smokingStatus" id="smokingStatus" class="item ">
+                        <option value="Smoker">Smoker</option>
+                        <option value="Non-Smoker">Non-Smoker</option>
+                    </select>
+                    <div class="error-txt">Smoking status can't be blank</div>
+                </div>
+                
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="gender">Gender:</label>
+                    <input type="text" name="gender" class="item" id="gender" placeholder="gender">
+                    <div class="error-txt">Gendere can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="coverageAmount">Coverage Amount:</label>
+                    <select name="coverageAmount" id="coverageAmount" class="item">
+                        <option value="1000">1000</option>
+                        <option value="2000">2000</option>
+                        <option value="3000">3000</option>
+                    </select>
+                    <div class="error-txt">Coverage amount can't be blank</div>
+                </div>
+                
+            </div>
+            <div class="input-box">
+                <div class="input-field field">
+                        <label for="beneficiaries">Beneficiaries:</label>
+                        <input type="text" name="beneficiaries" class="item city" id="beneficiaries" placeholder="beneficiaries">
+                        <div class="error-txt">Beneficiaries can't be blank</div> 
+                </div>
+            </div>
+            <input type="submit" value="Get Quote" class="btn">
+        </form>
+    </section>
+   
+<footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2024 by Dharampreet Singh Sandhu | All Rights Reserved</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+    </div>
+  
+    </footer>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+ 
+    document.querySelectorAll('.item').forEach(input => {
+       input.addEventListener('blur', function() {
+           const errorTxt = this.nextElementSibling; 
+           if (this.value.trim() === '') {
+               errorTxt.style.display = 'block';  
+           } else {
+               errorTxt.style.display = 'none';  
+           }
+       });
+   });
+     
+   
+   </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<% if(message) { %>
+    <script>
+        Swal.fire({
+            title: "Message",
+            html: "<%= message%>",
+            icon: "success",
+            confirmationButton: "OK",
+            customClass: {
+                confirmButton: 'custom-confirm-button'
+            }
+        })
+    </script>
+    <% } %>
+</body>
+</html>
+
+

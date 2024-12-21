@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisa Insurance</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/supervisa.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/supervisa">Supervisa Insurance</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Life Insurance</a>
+                <div class="dropdown-content">
+                    <a href="/lifeInsurance#critical-insurance">Critical Illness-Insurance</a>
+                    <a href="/lifeInsurance">Travel Insurance</a>
+                    
+                </div>
+            </div>
+            <!-- <a href="/about">About</a> -->
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Your Trusted Insurance Partner</h3>
+            <h1>Supervisa Insurance </h1>
+            <h3>Ensure Peace of Mind with <span class="multiple-text">Coverage, Safety, Affordability</span></h3>
+            <p>Supervisa Insurance is a mandatory requirement for parents and grandparents visiting Canada. Our plans provide affordable medical emergency coverage tailored to your needs, ensuring a worry-free experience for your loved ones.</p>
+        </div>
+        <div class="home-img">
+            <img src="/images/image-2.jpg" alt="Image" >
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Get in <span class="multiple-text">Touch</span></h2>
+        <p>Contact us today to learn more about our Supervisa Insurance plans and how they can meet your specific requirements</p>
+        <form id="supervisaForm"action="/supervisa" method="POST">
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" class="item" placeholder="Full Name">
+                    <div class="error-txt">Full Name can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" class="item" placeholder="Email">
+                    <div class="error-txt">Email can't be blank</div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="phone">Phone:</label>
+                  <input type="number" name="phone" class="item" id="phone" placeholder="phone">  
+                  <div class="error-txt">Phone can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="dateOfBirth">Date of birth:</label>
+                    <input type="date" name="dateOfBirth" id="date" class="item" placeholder="dateOfBirth">
+                    <div class="error-txt">Date of birth can't be blank</div>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field field">
+                    <label for="preExistingCondition" name="preExistingCondition">Pre Existing Condition:</label>
+                    <select name="preExistingCondition" id="preExistingCondition" class="item" >
+                        <option value="true">yes</option>
+                        <option value="false">no</option>
+                    </select>  
+                  <div class="error-txt">Pre Existing Condition can't be blank</div>
+                </div>
+                <div class="input-field field">
+                    <label for="startDateOfCoverage">Start Date of coverage:</label>
+                    <input type="date" name="startDateOfCoverage" id="startDateOfCoverage" class="item">
+                    <div class="error-txt">Start Date can't be blank</div>
+                </div>
+            </div>
+            
+        <div class="input-box">
+            <div class="input-field field">
+                <label for="citizenship">Citizenship:</label>
+                <input type="text" name="citizenship" id="citizenship" class="item city" placeholder="citizenship">
+                <div class="error-txt">Citizenship can't be blank</div>
+            </div>
+        </div>
+              <input type="submit" value="Get Quote" class="btn">
+        </form>
+    </section>
+    
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2024 by Dharampreet Singh Sandhu | All Rights Reserved</p></p>
+    </div>
+    <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+    </div>
+</footer>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ 
+ document.querySelectorAll('.item').forEach(input => {
+    input.addEventListener('blur', function() {
+        const errorTxt = this.nextElementSibling; 
+        if (this.value.trim() === '') {
+            errorTxt.style.display = 'block';  
+        } else {
+            errorTxt.style.display = 'none';  
+        }
+    });
+});
+  
+
+</script>
+<% if(message) { %>
+    <script>
+        Swal.fire({
+            title: "Message",
+            html: "<%= message%>",
+            icon: "success",
+            confirmationButton: "OK",
+            customClass: {
+                confirmButton: 'custom-confirm-button'
+            }
+        })
+    </script>
+    <% } %>
+</body>
+</html>
+<!-- <main>
+        <div class="supervisaInsurance-main">
+        
+            <div class="left-side">
+                <img src="/images/image-2.jpg" alt="Image">
+            </div>
+            <div class="right-side">
+                <h1>Supervisa Insurance</h1>
+    <form action="/supervisa" method="POST" class="supervisaInsurance-form">
+      <div class="supervisa-field">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name">
+      </div>
+
+    <div class="supervisa-field">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+    </div>
+
+    <div class="supervisa-field">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone">
+    </div>
+
+    <div class="supervisa-field">
+        <label for="dateOfBirth">Date of birth:</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth">
+    </div>
+
+    <div class="supervisa-field">
+        <label for="preExistingCondition" name="preExistingCondition">Pre Existing Condition</label>
+        <select name="preExistingCondition" id="preExistingCondition">
+            <option value="true">yes</option>
+            <option value="false">no</option>
+        </select>
+    </div>
+
+    <div class="supervisa-field">
+        <label for="startDateOfCoverage">Start Date of coverage</label>
+        <input type="date" name="startDateOfCoverage" id="startDateOfCoverage">
+    </div>
+
+    <div class="supervisa-field field">
+        <label for="citizenship">Citizenship</label>
+        <input type="text" name="citizenship" id="citizenship">
+    </div>
+    <div class="button-wrapper">
+    <button type="submit">Get Quote</button>
+</div>
+    </form>
+    
+</div>
+</div>
+</main> -->
