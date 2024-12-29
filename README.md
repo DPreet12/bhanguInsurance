@@ -3,7 +3,7 @@
 The purpose of bhanguInsurance platform is that to simplyfy the process of obtaining insurance quotes for variours types of insurances, and to provides users the access to information and options accorting to their needs.
 
 ## Deployed App
-Check out this live App: [bhangiInsurance](https://bhanguinsurance.onrender.com/)
+Check out this live App here: [bhanguInsurance](https://bhanguinsurance.onrender.com/)
 
 ## MVP
 - insurance quote request
