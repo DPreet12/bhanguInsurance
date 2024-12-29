@@ -11,11 +11,11 @@ const nodemailer = require("nodemailer");
 
 const {SupervisaInsurance, LifeInsurance, RRSP, Contact, Rate } = require("./models")
 
-const uri = process.env.MONGODB_LOCAL;
-mongoose.connect(uri);
-const db = mongoose.connection;
-db.once("open",()=> console.log(`Connected to MongoDB at ${db.host}:${db.port}`));
-db.on("error", (error)=> console.log("Database error\n", error));
+// const uri = process.env.MONGODB_LOCAL;
+// mongoose.connect(uri);
+// const db = mongoose.connection;
+// db.once("open",()=> console.log(`Connected to MongoDB at ${db.host}:${db.port}`));
+// db.on("error", (error)=> console.log("Database error\n", error));
 
 // Middleware
 app.set("view engine", "ejs");
@@ -225,11 +225,18 @@ app.get("/contact", (req, res) => {
 
 app.post("/contact", async(req, res) => {
     
-    const { firstName, lastName, phone, email, message} = req.body;
     try {
+        const { firstName, lastName, phone, email, message} = req.body;
+
         if(!firstName || !lastName || !email || !phone || !message ) {
             return res.status(400).send("All fields are required");
         }
+
+        const contactData = new Contact({
+            firstName, lastName, email, phone, message
+        });
+
+        await contactData.save();
 
         const mailOptions = {
             from: process.env.EMAIL_USERNAME,
