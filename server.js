@@ -25,6 +25,10 @@ app.use(methodOdverride("_method"));
 app.use(express.static(__dirname + "/public"));
 app.use(express.json())
 
+// app.get('/sitemap.xml', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'sitemap.xml'));
+// });
+
 app.get("/", (req, res) => {
     res.render("app/home");
 });
